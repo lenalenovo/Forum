@@ -57,3 +57,30 @@ export const ImagemStyle = styled.img`
     margin-right:1.9vw;
     grid-column: 2/2;
 `
+
+export const DireitaLogin = styled.div`
+  width: 35vw;
+  height: 80vh;
+  flex-direction: column;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+`
+
+export const CardLogin = styled.div`
+  width: 70vw;
+  height: 90vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  margin-left: 200px;
+  margin-top: 30px;
+`
+export const EsquerdaLogin = styled.div`
+   width: 30vw;
+  height: 80vh;
+  flex-direction: column;
+  background-color: #f448A0;
+  border-radius: 10%;
+`

@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from "../../componentes/Header/Header"
-import loginImagem from '../../assets/imagemLogin.png'
-import { ButtonStyle, ContainerDiv, FormStyle, ImagemStyle, InputStyle, PStyle, SectionStyle } from './style';
+import { ButtonStyle, CardLogin, ContainerDiv, DireitaLogin, EsquerdaLogin, FormStyle, InputStyle, PStyle } from './style';
 import { useData } from '../../hooks/useData';
 import { useTokenNotNull } from '../../hooks/usetokenNotNull';
+import { ContainerGeradl2222 } from '../../GlobalStyled';
 
 
 function Login() {
@@ -16,9 +16,9 @@ function Login() {
             <Header
                 titulo={"login"}
             />
-
-            <SectionStyle>
-                <ContainerDiv>
+            <ContainerGeradl2222>
+            <CardLogin>
+                <EsquerdaLogin>
                     <h2>We’ve Missed You!</h2>
                     <PStyle>More than 150 questions are waiting for your wise suggestions!</PStyle>
 
@@ -46,12 +46,15 @@ function Login() {
 
                     </FormStyle>
 
-                </ContainerDiv>
-                <ImagemStyle src={loginImagem} alt='' />
+                </EsquerdaLogin>
+
+                <DireitaLogin>
+                    oi
+                </DireitaLogin>
 
 
-            </SectionStyle>
-
+            </CardLogin>
+            </ContainerGeradl2222>
         </>
     )
 }
