@@ -11,7 +11,7 @@ export const useData = (initialForm, path) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(`${BASE_URL}${path}`, form)
+        axios.post(`http://localhost:3008/api/user/create`, form) //${BASE_URL}${path}
             .then(response => {
                 if (response.data.token) {
                     // window.localStorage.setItem('token', response.data.token);

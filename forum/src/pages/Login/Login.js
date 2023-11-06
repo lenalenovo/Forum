@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from "../../componentes/Header/Header"
 import { ButtonStyle, CardLogin, DireitaLogin, EsquerdaLogin, FormStyle, H1, H3, H4, ImagDireira, InputStyle, PStyle, Paragrafo, Textfield } from './style';
 import { useData } from '../../hooks/useData';
@@ -7,11 +7,31 @@ import { ContainerGeradl2222 } from '../../GlobalStyled';
 import LogoSpeakOut from "../../assets/LogoSpeakOut.png"
 import { useNavigate } from 'react-router-dom';
 import { TituloDireita } from '../Signup/styled';
+import axios from 'axios';
 
 function Login() {
-    const {form, onChangeForm, handleSubmit, message} = useData({username:'', password:''},'/user/login');
+    //const {form, onChangeForm, handleSubmit, message} = useData({username:'', password:''},'/user/login');
 
-    useTokenNotNull()
+    // useTokenNotNull()
+
+    const [nome, setNome] = useState("");
+    const [senha, setSenha] = useState("");
+
+    const handleSubmit = async () => {
+        
+        const data = {
+            nome,
+            senha
+        };
+
+        const response = await axios.post('http://localhost:3008/api/auth/login', data);
+        //?}}]lert(response.data)
+        if (response.data.success) {
+            alert('Suceesso!');
+        } else {
+            alert('Deu erro!');
+        }
+    }    
 
 
     return (
@@ -40,24 +60,24 @@ function Login() {
                             Login
                         </H4>
 
-                    <FormStyle onSubmit={handleSubmit}>
+                    <FormStyle >
                         <InputStyle
                             placeholder='Nome'
                             type="text"
                             name='username'
-                            value={form.username}
-                            onChange={onChangeForm} />
+                            value={nome}
+                            onChange={(e) => setNome(e.target.value)} />
 
                         <InputStyle
                             placeholder='Senha'
                             type="password"
                             name='password'
-                            value={form.password}
-                            onChange={onChangeForm} />
+                            value={senha}
+                            onChange={(e) => setSenha(e.target.value)} />
                             
-                        {message &&  <p>{message} </p>}
+                        {/* {message &&  <p>{message} </p>} */}
 
-                        <ButtonStyle type="submit">Entrar</ButtonStyle>
+                        <ButtonStyle onClick={handleSubmit}>Entrar</ButtonStyle>
                     
                     </FormStyle>
                 </DireitaLogin>
