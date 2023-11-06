@@ -10,6 +10,13 @@ export const SectionStyle = styled.section`
     /* justify-content:space-evenly; */
 `
 
+export const H4 = styled.h4`
+  color: #f448A0;
+  padding: 2%;
+  padding-left: 47%;
+  font-family: Arial, Helvetica, sans-serif;
+  `
+
 export const ContainerDiv = styled.div`
 /* border: 1px solid black; */
 display: flex;
@@ -26,27 +33,38 @@ width: 15vw;
 `
 
 export const FormStyle = styled.form`
+    width: 100%;
     display: flex;
     flex-direction: column;
-    width: 18vw;
-    gap: 15px;
-    `
+    justify-content: center;
+    margin: 10px 80px;
+    row-gap:17px;
+    padding-top: 15px;
+`
 
 export const InputStyle = styled.input`
-height: 5vh;
-border-radius: 5px;
-border: 2px solid #d6d3d3;
-padding-left: 12px;
+width: 70%;
+border: none;
+border-radius: 20px;
+padding: 15px;
+background: #ffaac2;
+font-size: 12pt;
+outline: none;
+box-sizing: border-box;
 `
 
 export const ButtonStyle = styled.button`
-    background-color: #f57914;
-    height: 5vh;
+    width: 30%;
+    padding: 12px;
+    margin: 05px;
+    margin-left: 100px;
     border: none;
-    border-radius: 5px;
-    font-weight: 600;
+    border-radius: 10px;
+    letter-spacing: 3px;
+    background-color: #f448A0;
+    cursor: pointer;
     color: white;
-    text-shadow: 0.5px 1px 1px #868484;
+    box-shadow: 0px 10px 40px -12px  #3D0000;
 `
 
 export const ImagemStyle = styled.img`
@@ -68,14 +86,14 @@ export const DireitaLogin = styled.div`
 
 export const CardLogin = styled.div`
   width: 70vw;
-  height: 90vh;
+  height: 85vh;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
   margin-left: 200px;
-  margin-top: 30px;
+  margin-top: 10px;
 `
 export const EsquerdaLogin = styled.div`
    width: 30vw;
@@ -84,3 +102,31 @@ export const EsquerdaLogin = styled.div`
   background-color: #f448A0;
   border-radius: 10%;
 `
+
+export const H1 = styled.h1`
+  color: white;
+  padding-left: 08%;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 05%;
+  letter-spacing: 1px;
+`
+
+export const H3 = styled.h3`
+    color: white;
+    padding: 15%;
+    padding-left: 15%;
+    font-family: Arial, Helvetica, sans-serif;
+`
+
+export const ImagDireira = styled.img`
+    padding-top: 40px;
+    padding-left: 70px;
+    height: 15vh;
+    weight: 15vw;
+`
+export const Paragrafo = styled.p`
+   color: #f448A0;
+   margin-left: 100px;
+   justify-content: space-between;
+`
+

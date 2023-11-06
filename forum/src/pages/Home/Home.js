@@ -4,6 +4,7 @@ import Historicos from "../../componentes/Historicos/Historicos";
 import Menu from "../../componentes/Menu/Menu";
 import { SectionStyle } from "./style";
 import { useVerificarToken } from "../../hooks/useverificarToken";
+import { ContainerGeral } from "../../GlobalStyled";
 
 
 function Home({ news }) {
@@ -19,13 +20,14 @@ function Home({ news }) {
                 titulo={'Questions'}
             />
 
+            <ContainerGeral>
             <SectionStyle>
-                <Menu />
                 <Card />
 
-                <Historicos />
+                {/* <Historicos /> */}
 
             </SectionStyle>
+            </ContainerGeral>
 
         </>
     )

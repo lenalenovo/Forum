@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const SectionStyle = styled.section`
     display: flex;
     margin-top:1vh;
-    background-color: #EAEAEA;
+   
 `
 
 export const ContainerHome = styled.div`

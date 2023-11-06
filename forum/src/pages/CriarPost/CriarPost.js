@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import HeaderPerfil from "../../componentes/Header/HeaderPerfil";
 import Menu from "../../componentes/Menu/Menu";
-import { ButtonStyle, ContainerCriarPost, FormStyle, InputStyle, TextareaStyle } from "./styles";
+import { AreaTitulo, ButtonStyle, CardBolinha, ContainerCriarPost, FormStyle, InputStyle, InputTitulo, TextareaStyle } from "./styles";
 import Historicos from "../../componentes/Historicos/Historicos";
 import { createPost } from "../../services/requests";
 import { useVerificarToken } from "../../hooks/useverificarToken";
+import { ContainerCenter, GeralPost } from "../../GlobalStyled";
 
 const CriarPost = () => {
   const [title, setTitle] = useState("");
@@ -36,16 +37,22 @@ const CriarPost = () => {
 
   return (
     <>
-      <HeaderPerfil titulo={"New Question"} />
+    <HeaderPerfil titulo={"New Question"} />
+      <GeralPost>
+      <ContainerCenter>
       <ContainerCriarPost>
-        <Menu />
         <FormStyle onSubmit={criarPostAPI}>
-          <InputStyle
+          <AreaTitulo>
+          <CardBolinha>
+            
+          </CardBolinha>
+          <InputTitulo
             placeholder="Título"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
           />
+          </AreaTitulo>
 
           <TextareaStyle
             placeholder="Conteúdo"
@@ -72,9 +79,9 @@ const CriarPost = () => {
             <ButtonStyle type="submit">Enviar</ButtonStyle>
 
         </FormStyle>
-
-        <Historicos />
       </ContainerCriarPost>
+      </ContainerCenter>
+      </GeralPost>
     </>
   );
 };

@@ -15,20 +15,36 @@ export const MenuStyle = styled.aside`
 
 export const InputSearch = styled.input`
     height: 3vh;
+    width: 25vw;
     border-radius: 4px;
     box-shadow: 0 0 0 0;
     border: 0 none;
     outline: 0;
     padding: 5px;
+    margin-left: 20%;
     box-shadow: 0px 1px 3px black;
 `
 
+export const MenuLogo = styled.img`
+    height: 80px;
+    weight: 80px;
+    margin: 20px;
+`
+
 export const ButtonMenu = styled.button`
-    height: 5vh;
+    height: 10vh;
     padding: 5px;
-    box-shadow: 0px 2px 3px black;
+    width: 20vw;
     border: none;
-    color: ${(props) => (props.active ? 'white' : 'orange')};
+    color: ${(props) => (props.active ? 'white' : 'black')};
     border-radius: 4px;
-    background-color: ${(props) => (props.active ? 'orange' : '#fafafa')};
+    background-color: ${(props) => (props.active ? '#f448A0' : '#fafafa')};
+`
+
+export const Menutitulo = styled.p`
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin-left: 40px; 
+    color: #f448A0;
+    font-weight: bold
 `

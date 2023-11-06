@@ -8,9 +8,23 @@ export const HeaderStyle = styled.header`
     box-shadow: 0px 0.1px 5px black;
     padding: 10px;
 `
+export const ContainerHeader = styled.header`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 6vh;
+    box-shadow: 0px 0.1px 5px black;
+    padding: 10px;
+    background-color: rgba(236, 67, 153, 1);
+`
+
+export const LogoHeader = styled.img`
+    height: 07vh;
+    weight: 10vw;
+`
 
 export const ButtonRegister = styled.button`
-    background-color: #F48023;
+    background-color: #f448A0;
     color: #fff;
     font-weight: 600;
     padding: 10px;
@@ -46,8 +60,8 @@ export const ButtonAsk = styled.button`
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color:  #F48023;
-    color: #fff;
+    background-color:  white;
+    color: rgba(180, 0, 92, 1);
     width: 9vw;
     font-weight: 400;
 
@@ -85,7 +99,7 @@ export const PrimeiroButton = styled.li`
     `
 
 export const ButtonLista = styled.li`
-    background-color: #F48023;
+    background-color: rgba(180, 0, 92, 1);
     width: 4vw;
     padding: 0.1vw;
     border-radius: 5px;

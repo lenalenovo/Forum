@@ -16,12 +16,17 @@ export const useData = (initialForm, path) => {
                 if (response.data.token) {
                     // window.localStorage.setItem('token', response.data.token);
                     localStorage.setItem('token', response.data.token);
-                    setMessage(response.data.message);
-                    alert(response.data.message);
+                    setMessage(response.data.data.message);
+                    alert(response.data.data.message);
                     navigate('/');
-                } else if(response.data.message) {                 
+                    console.log(response.data.success)
+                    console.log(response.data.message)
+                    console.log(response.data.data)
+                    
+                } else if(response.data.dada.message) {                 
                     setMessage("Usuário já cadastrado");
                 }
+
             })
             .catch(error => {
                 if (error.response && error.response.status === 401) {
