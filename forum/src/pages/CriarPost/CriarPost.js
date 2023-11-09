@@ -12,6 +12,7 @@ const CriarPost = () => {
   const [content, setContent] = useState("");
   const [image, setImage] = useState("");
   const [hashtag, setHashtag] = useState(""); 
+  // const [description, setDescription] = useState(" ")
 
   
   const criarPostAPI = async (e) => {
@@ -24,14 +25,19 @@ const CriarPost = () => {
 
     const hashtagsArray = hashtag.split(",");
 
-    await createPost(title, content, image, hashtagsArray)
+    await createPost(title, content, image, /*description*/ hashtagsArray)
       .then((response) => {
         console.log("Post criado com sucesso!", response);
       })
-      .catch((error) => {
-        console.error("Erro ao criar o post:", error);
+      .catch((err) => {
+        console.error("Erro ao criar o post:", err);
       });
   };
+
+   console.log(title)
+   console.log(content)
+   console.log(image)
+  
 
   useVerificarToken()
 
@@ -46,9 +52,10 @@ const CriarPost = () => {
           <CardBolinha>
             
           </CardBolinha>
+
           <InputTitulo
             placeholder="Título"
-            value={title}
+            value={title || ''}
             onChange={(e) => setTitle(e.target.value)}
             required
           />
@@ -56,21 +63,27 @@ const CriarPost = () => {
 
           <TextareaStyle
             placeholder="Conteúdo"
-            value={content}
+            value={content || ''}
             onChange={(e) => setContent(e.target.value)}
             required
           />
+           {/* <TextareaStyle
+            placeholder="Descrição"
+            value={description || ''}
+            onChange={(e) => setDescription(e.target.value)}
+          /> */}
 
           <InputStyle
             type="text" // Use um input de texto para inserir as hashtags
             placeholder="Hashtags (separadas por vírgulas)"
-            value={hashtag}
+            value={hashtag || ''}
             onChange={(e) => setHashtag(e.target.value)}
           />
 
           <InputStyle
             type="text"
             label="Imagem"
+            value={image || ''}
             placeholder="Digite o endereço da imagem" 
             onChange={(e) => setImage(e.target.value)}
           />

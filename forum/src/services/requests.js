@@ -6,7 +6,7 @@ const token = localStorage.getItem('token');
 
 export const getPost = (salvarPost) => {
 
-  axios.get(`${BASE_URL}/post`, { headers: { 'Authorization': token } })
+  axios.get(`${BASE_URL}/api/post`, { headers: { 'Authorization': token } })
     .then((response) => {
       salvarPost(response.data)
     })
@@ -14,9 +14,9 @@ export const getPost = (salvarPost) => {
 }
 
 export const getPostAll = (salvarPosts) => {
-  axios.get(`${BASE_URL}/post/all`)
+  axios.get(`${BASE_URL}/api/post/all`)
     .then((response) => {
-      salvarPosts(response.data)
+      salvarPosts(response.data.data)
     })
     .catch((err) => { console.log(err) })
 }
@@ -31,7 +31,7 @@ export const createPost = (title, content, image, hashtag) =>  {
     };
 
     // console.log(body)
-    axios.post(`${BASE_URL}/post/create`, body, { headers: { Authorization: token } })
+    axios.post(`${BASE_URL}/api/post/create`, body, { headers: { Authorization: token } })
       .then((response) => {
         getPostAll()
         resolve(response.data); // Resolvendo a Promessa com os dados da resposta
@@ -88,5 +88,12 @@ export const createComment = (postId, comment) => {
     });
 };
 
+export const getCommentsAll = (salvarPosts) => {
+  axios.get(`${BASE_URL}/api/comment/all`)
+    .then((response) => {
+      salvarPosts(response.data.data)
+    })
+    .catch((err) => { console.log(err) })
+}
 
 

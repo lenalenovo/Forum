@@ -24,7 +24,7 @@ function Login() {
             senha
         };
 
-        const response = await axios.post('http://localhost:3008/api/auth/login', data);
+        const response = await axios.post('http://localhost:3001/api/auth/login', data);
         //?}}]lert(response.data)
         if (response.data.success) {
             alert('Suceesso!');

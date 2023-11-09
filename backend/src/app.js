@@ -6,12 +6,10 @@ const commentRouter   = require('./routes/commentsRouter');
 const reactionsRouter = require('./routes/reactionsRouter');
 const cors            = require('cors');
 const app             = express();
-require('dotenv').config();
 
 app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static(__dirname + '\\public'));
-app.set('port', process.env.PORT);
 app.use('/api', userRouter);
 app.use('/api', loginRouter);
 app.use('/api', postRouter);

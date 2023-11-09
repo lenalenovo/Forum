@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
-import { createComment } from "../../services/requests";
+import { createComment, getPostAll } from "../../services/requests";
 import { AutorComentario, BotaoCondicional, ComentarioContainer, ComentarioDoAutor, ContainerCurtir, ContainerItem, InputComentar } from "./style";
 import Curtir from "../Curtir/Curtir";
 
 
-const Comentar = ({ postId, comments, autorId }) => {
+const Comentar = ({ postId, autorId }) => {
 
     const [novoComentario, setNovoComentario] = useState('');
     const [comentarios, setNovoComentarios] = useState([])
     const [mostrarComentarios, setMostrarComentarios] = useState(false);
 
+    const [forumTopics, setforumTopics] = useState([])
+
     const adicionarComentario = () => {
         if (novoComentario.trim() !== '') {
             createComment(postId, novoComentario);
-            setNovoComentarios(...comments, novoComentario)
+            setNovoComentarios(...comentarios, novoComentario)
             setNovoComentario(''); // Limpa o input
         }
     }
@@ -22,8 +24,11 @@ const Comentar = ({ postId, comments, autorId }) => {
     useEffect(() => {
         adicionarComentario()
     }, [])
+    useEffect(()=>{
+        // getCommentsAll(setNovoComentario)
+    },[])
 
-    const novosComentario = comments.map((comentario) => {
+    const novosComentario = comentarios.map((comentario) => {
         return (<ComentarioContainer key={comentario.comment_id}>
             <AutorComentario>{comentario.creator_name}:</AutorComentario>
             <ComentarioDoAutor>{comentario.comment}</ComentarioDoAutor>

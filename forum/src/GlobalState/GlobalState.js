@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { GlobalStateContect } from "./GlobalStateContext"
 import axios from "axios";
+import { BASE_URL } from "../constants/url";
 
 
 
@@ -18,8 +19,9 @@ export const GlobalState = ({children})=>{
             },
           };
 
-          axios.get('https://forum-backend-3zv0.onrender.com/post', config)
+          axios.get(`${BASE_URL}/api/post/all`, config)
           .then((response)=>{
+            // console.log(response)
             setForumTopics(response.data)
           })
           .catch((error) =>{

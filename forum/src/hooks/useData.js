@@ -11,13 +11,13 @@ export const useData = (initialForm, path) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:3008/api/user/create`, form) //${BASE_URL}${path}
+        axios.post(`${BASE_URL}/api/user/create`, form) //${BASE_URL}${path}
             .then(response => {
                 if (response.data.token) {
                     // window.localStorage.setItem('token', response.data.token);
                     localStorage.setItem('token', response.data.token);
                     setMessage(response.data.data.message);
-                    alert(response.data.data.message);
+                    // alert(response.data.data.message);
                     navigate('/');
                     console.log(response.data.success)
                     console.log(response.data.message)
